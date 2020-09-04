@@ -1,0 +1,48 @@
+% Packages
+\usepackage{fullpage}
+\usepackage{authblk}
+\usepackage[usenames,dvipsnames]{xcolor}
+\usepackage[mathscr]{euscript}
+\usepackage{amsmath, amsfonts, amssymb, amsthm, graphics, graphicx, multicol, multirow, enumerate, float, floatflt, fullpage, tikz, outlines, url, tabularx, enumitem}
+\usepackage[utf8]{inputenc}
+\usepackage{fancyhdr}
+\usepackage{subcaption}  % enables subfigures
+
+% Layout
+\usepackage[top=2cm, bottom=4.5cm, left=2.5cm, right=2.5cm]{geometry}
+\setlength{\parindent}{0.0in}
+\setlength{\parskip}{0.05in}
+
+\usepackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=blue,
+  linkbordercolor={0 0 1}
+}
+
+% Algorithm Template
+\usepackage[ruled,vlined]{algorithm2e}
+\SetKwInput{KwInput}{Input}                % set the Input
+\SetKwInput{KwOutput}{Output}              % set the Output
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{blue}{#1}}
+
+% Tikz Template
+\tikzset{fontscale/.style = {font=\relsize{#1}}}
+\usetikzlibrary{shapes}
+
+% Theorem Headers
+\newtheorem{thm}{Theorem}
+\newtheorem{cor}[thm]{Corollary}
+\newtheorem{defn}{Definition}
+\newtheorem{prop}[thm]{Proposition}
+\newtheorem{lem}[thm]{Lemma}
+\newtheorem{conj}[thm]{Conjecture}
+\newtheorem{rem}{Remark}
+\newtheorem{exa}{Example}
+\newtheorem{obs}{Observation}
+
+% Aliases for frequent commands
+\newcommand{\br}{\vspace{1em}}             % blank line
+
+% Math Notations
+\newcommand{\G}{\mathbb{G}}

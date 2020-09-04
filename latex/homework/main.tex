@@ -1,0 +1,70 @@
+\documentclass[12pt,letterpaper]{article}
+\usepackage{common}
+
+% Meta Information
+\newcommand\course{CS XXXX-001 Fall 20XX}
+\newcommand\doctitle{Homework 1}
+\newcommand\student{Yosuke Mizutani}
+
+% Header
+\pagestyle{fancyplain}
+\headheight 35pt
+\lhead{\student}
+\chead{\textbf{\Large \doctitle}}
+\rhead{\course \\ \today}
+\lfoot{}
+\cfoot{}
+\rfoot{\small\thepage}
+\headsep 1.5em
+
+% Document Body
+\begin{document}
+
+\section*{Question 1}
+
+\begin{enumerate}[label=(\alph*)]
+  \item Item 1
+  \item Item 2
+\end{enumerate}
+
+\section*{Question 2}
+
+\begin{enumerate}[label=(\arabic*)]
+  \item Item 1
+  \begin{proof}
+    Here is an example proof.
+  \end{proof}
+
+  \item Item 2
+\end{enumerate}
+
+\section*{Question 3}
+
+\begin{exa}Example Algorithm.\end{exa}
+
+\begin{algorithm}[H]
+  \SetCommentSty{mycommfont}  % comment text typography
+  \SetKwFunction{FSearch}{Search}
+  \KwInput{Marked graph $G=(F,M,E)$\\ Targeting strategy $f: G \mapsto v \in (F \cup M)$}
+  \KwOutput{List of transitions $T=(I_1, M_1),\ldots,(I_k,M_k)$}
+  \BlankLine
+  \tcc{choose the target vertex}
+  $v := f(G)$\\
+
+  \BlankLine
+  Let $L$ be a list of the free vertices in the closed neighborhood of $v$\\
+  Sort $L$ by free-degree in decreasing order\\
+  Let $T$ be an empty list of transitions\\
+  Let $M$ be an empty set\\
+
+  \BlankLine
+  \ForEach{$u$ in $L$}{
+      Append pair $(\{u\}, M \setminus N(u))$ to list $T$\\
+      Add $u$ to set $M$
+  }
+
+  \KwRet{T}
+  \caption{Branch}
+\end{algorithm}
+
+\end{document}
