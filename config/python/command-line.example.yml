@@ -1,0 +1,3 @@
+program_description: 'Program description.'
+logging_enabled: True
+external_modules: []

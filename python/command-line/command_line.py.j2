@@ -42,18 +42,20 @@ def get_parser():
     """Argument parser."""
 
     parser = argparse.ArgumentParser(description='{{ program_description }}')
-{% if logging_enabled %}    parser.add_argument('--log-level', choices=['crit', 'error', 'warn', 'info', 'debug', 'none'], default='info', help='log level'){% endif %}
+{% if logging_enabled %}
+    parser.add_argument('--log-level', choices=['crit', 'error', 'warn', 'info', 'debug', 'none'], default='info', help='log level')
+{% endif %}
     return parser
 
 
 def main(args):
     """Entry point of the program. """
 
-    {% if logging_enabled %}
+{% if logging_enabled %}
     # get logger
     logger = get_logger({'crit': logging.CRITICAL, 'error': logging.ERROR, 'warn': logging.WARNING, 'info': logging.INFO, 'debug': logging.DEBUG, 'none': logging.CRITICAL + 1}[
         args.log_level])
-    {% endif %}
+{% endif %}
 
     # main logic
 
