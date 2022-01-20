@@ -42,6 +42,7 @@ def get_parser():
     """Argument parser."""
 
     parser = argparse.ArgumentParser(description='{{ program_description }}')
+    parser.add_argument('-v', '--version', action='version', version=f'%(prog)s {__version__}')
 {% if logging_enabled %}
     parser.add_argument('--log-level', choices=['crit', 'error', 'warn', 'info', 'debug', 'none'], default='info', help='log level')
 {% endif %}
